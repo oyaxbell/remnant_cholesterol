@@ -12,7 +12,7 @@ pacman::p_load(readxl,haven, tidyverse, ggpubr, lmtest, nortest, gtools,
                cluster, ggplotify, UpSetR,tseries, simPH,gvlma,
                nortest, viridis, officer, magrittr, mice,dummies,jtools,
                PerformanceAnalytics, corrplot, mice, performance, SAScii, sjPlot)
-setwd("~/OneDrive - UNIVERSIDAD NACIONAL AUT?NOMA DE M?XICO/Remanentes de colesterol - Ars")
+setwd("~/OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO/Remanentes de colesterol - Ars")
 #setwd("C:/Users/Investigacion/OneDrive - UNIVERSIDAD NACIONAL AUT?NOMA DE M?XICO/Remanentes de colesterol - Ars")
 
 ## COMPUTADORA ARSENIO ##
@@ -323,7 +323,9 @@ base<-as.data.frame(x1)
 base<-base %>% filter(HOMA2IR>0) %>%
   filter(HOMA2IR<20) %>% filter(TG<800) %>% filter(Rem_S>0) %>% filter(DMF==0)
 
-#### Transformation of variables of interest #####
+#### Load processed data #####
+
+base<-read.csv("base.csv")
 
 ### Build database for models
 base1 <- base %>%
